@@ -15,6 +15,6 @@ typedef struct{
 #endif
 
 int createProduct(Product *p);
-void readProduct(Product p);
+void readProduct(Product *p);
 void updateProduct(Product *p);
 int deleteProduct(Product *p);
