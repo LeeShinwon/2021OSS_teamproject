@@ -1,4 +1,5 @@
 //manager.c
+//#include "product.h"
 #include "manager.h"
 
 int selectMenu(){
@@ -28,7 +29,7 @@ int selectMenu(){
         readProduct(&p[i]);//error
     }
     printf("\n");
-}*/
+}
 
 int selectDataNo(Product *p, int count){
     int no;
@@ -37,6 +38,6 @@ int selectDataNo(Product *p, int count){
     scanf("%d",&no);
     getchar();
     return no;
-}
+}*/
 
 
