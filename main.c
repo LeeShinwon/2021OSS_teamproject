@@ -8,7 +8,7 @@ int main(){
     int count = 0, menu;
     
     //count = loadData(slist);
-    curcount=count; 
+    curcount = count; 
 
 
     while (1){
