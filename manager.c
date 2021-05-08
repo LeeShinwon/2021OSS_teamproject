@@ -11,14 +11,14 @@ int selectMenu(){
     printf("6. 제품분석\n");//사람들이 가장 선호하는 채식 알려줌
     printf("7. 제품검색\n");//검색한 제품에 대한 정보를 알려줌
     printf("8. 제품추천\n");//선택한 범주에 맞는 제품을 추천해줌
-    printf("9. 종료\n");
+    printf("0. 종료\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
 
     return menu;
 }
 
-void listProduct(Product *p,int count){
+/*void listProduct(Product *p,int count){
 
     printf("\nNo. Name            type  level  calorie  like\n");
     printf("===================================================\n");
@@ -28,7 +28,7 @@ void listProduct(Product *p,int count){
         readProduct(&p[i]);//error
     }
     printf("\n");
-}
+}*/
 
 int selectDataNo(Product *p, int count){
     int no;
