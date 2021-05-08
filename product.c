@@ -42,7 +42,7 @@ int createProduct(Product *p){
 }
 
 void readProduct(Product *p){
-    printf("%-15s%-7s%-6s%-9d%d", p->name, level_list[p->level], type_list[p->type], p->calorie, p->like);
+    printf("%-15s%-7s%-6s%-9d%d", p->name, level_list[p->level -1], type_list[p->type -1], p->calorie, p->like);
     printf("\n");
 }
 
