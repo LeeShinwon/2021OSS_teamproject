@@ -1,6 +1,5 @@
 //manager.c
 #include "product.h"
-#include "manager.h"
 
 int selectMenu(){
     int menu;
