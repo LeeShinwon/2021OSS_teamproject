@@ -57,7 +57,9 @@ int main(){
 
         }
         else if(menu==8){//제품추천
-
+            if(recommendProduct(slist, curcount)==0){
+                printf("데이터가 없습니다!\n");
+            }
         }
 	}
 
