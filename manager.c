@@ -68,3 +68,58 @@ int loadData(Product *p){
 	printf("=> 로딩 성공!\n");
 	return i;
 }
+
+int recommendProduct(Product *p, int count){
+    char level_list[7][20] = {"Vegan", "Lacto", "Ovo", "Lacto Ovo", "Pollo", "Pesco", "Flexitarian"};
+    char type_list[6][20] = {"vegetable", "milk", "egg", "fish", "chicken", "fork, beef"};
+
+    Product cmp;
+    int scount=0;
+
+    printf("------------------------------------------------------------------------------\n|");
+    for(int i=0; i<7; i++){
+        printf("%d: %s", i+1, level_list[i]);
+        if(i<6){
+            printf(", ");
+        }
+    }
+    printf("|\n------------------------------------------------------------------------------\n");
+
+    printf("허용 범위는? ");
+    scanf("%d",&cmp.level);
+
+    printf("-------------------------------------------------------------------\n|");
+    for(int i=0; i<6; i++){
+        printf("%d: %s", i+1, type_list[i]);
+        if(i<5){
+            printf(", ");
+        }
+    }
+    printf("|\n-------------------------------------------------------------------\n");
+
+    printf("음식 종류는? ");
+    scanf("%d",&cmp.type);
+
+    printf("100g당 최대 칼로리는? ");
+    scanf("%d",&cmp.calorie);
+
+    printf("최소 추천수는? ");
+    scanf("%d",&cmp.like);
+
+    printf("\n\n<추천 목록>\n");
+
+    for(int i=0; i<count; i++){
+        if(p[i].level==cmp.level){
+            if(p[i].type==cmp.type){
+                if(p[i].calorie<=cmp.calorie){
+                    if(p[i].like>=cmp.like){
+                        readProduct(&p[i]);
+                        scount++;
+                    }
+                }
+            }
+        }
+    }
+    return scount;
+    
+}
