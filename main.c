@@ -7,14 +7,15 @@ int main(){
     int curcount=0;
     int count = 0, menu;
     
-    count = loadData(slist);
+    //count = loadData(slist);
     curcount=count; 
+
 
     while (1){
         menu = selectMenu();
         getchar();
         if(menu == 0) break;
-        if(menu == 1 || menu ==3 || menu == 4){	
+        /*if(menu == 1 || menu ==3 || menu == 4){	
 		    if (count==0){ 
                 printf(" 데이터가 없습니다!\n");
 			    continue;
@@ -57,7 +58,7 @@ int main(){
         }
         else if(menu==8){//제품추천
 
-        }
+        }*/
 	}
 
 	printf("\n종료됨!\n");
