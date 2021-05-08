@@ -1,4 +1,7 @@
 #include "product.h"
+#include "convert.h"
+char level_list[7][20] = {"Vegan", "Lacto", "Ovo", "Lacto Ovo", "Pollo", "Pesco", "Flexitarian"};
+char type_list[6][20] = {"vegetable", "milk", "egg", "fish", "chicken", "fork, beef"};
 
 int createProduct(Product *p){
     printf("\n");
@@ -22,10 +25,7 @@ int createProduct(Product *p){
 }
 
 void readProduct(Product *p){
-    printf("%-15s %4d칼로리 추천 수 %2d ",p->name,p->calorie, p->like);
-    intToCharLEVEL(p->level);
-    printf(" ");
-    intToCharTYPE(p->type);
+    printf("%-15s%-7s%-6s%-9d%d", p->name, level_list[p->level], type_list[p->type], p->calorie, p->like);
     printf("\n");
 }
 

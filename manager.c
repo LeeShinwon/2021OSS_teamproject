@@ -1,5 +1,5 @@
 //manager.c
-//#include "product.h"
+#include "product.h"
 #include "manager.h"
 
 int selectMenu(){
@@ -19,14 +19,14 @@ int selectMenu(){
     return menu;
 }
 
-/*void listProduct(Product *p,int count){
+void listProduct(Product *p,int count){
 
-    printf("\nNo. Name            type  level  calorie  like\n");
+    printf("\nNo. Name           level  type  calorie  like\n");
     printf("===================================================\n");
     for(int i=0; i<count; i++){
         if( p[i].type == -1 || p[i].level == -1 ) continue;
-        printf("%2d.", i+1);
-        readProduct(&p[i]);//error
+        printf("%2d. ", i+1);
+        readProduct(&p[i]);
     }
     printf("\n");
 }
@@ -38,6 +38,34 @@ int selectDataNo(Product *p, int count){
     scanf("%d",&no);
     getchar();
     return no;
-}*/
+}
+
+void saveData(Product p[], int count){
+	FILE* fp;
+
+	fp= fopen("product.txt","wt");
+	for(int i=0; i<count; i++){
+		if( p[i].type == -1 || p[i].level == -1 ) continue;
+		fprintf(fp, "%d %d %d %d %s\n", p[i].level, p[i].type, p[i].calorie, p[i].like, p[i].name);
+	}
+	
+	fclose(fp);
+	printf("저장됨!\n");
+}
+
+int loadData(Product *p){
+	int count=0;
+	FILE*fp;
+	fp = fopen("product.txt", "rt");
+	int i;
+	for(i=0; i<100; i++){
+		fscanf(fp, "%d", &p[i].level);
+		if(feof(fp)) break;
+		fscanf(fp, "%d %d %d %s", &p[i].type, &p[i].calorie, &p[i].like, p[i].name);
+	}
+	fclose(fp);
 
 
+	printf("=> 로딩 성공!\n");
+	return i;
+}
