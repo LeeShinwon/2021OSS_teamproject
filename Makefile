@@ -1,5 +1,5 @@
 all : main
-market : main.c manager.o product.o convert.o
+main : main.c convert.o manager.o product.o
 	gcc -o $@ $^
 clean:
 	rm *.o main
