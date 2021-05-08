@@ -1,8 +1,9 @@
 //product.h
 #ifndef PRO
 #define PRO
+
 #include <stdio.h>
-#include <stdlib.h>
+//#include <stdlib.h>
 
 typedef struct{
     char name[20];//product name
@@ -18,3 +19,5 @@ int createProduct(Product *p);
 void readProduct(Product *p);
 void updateProduct(Product *p);
 int deleteProduct(Product *p);
+
+
