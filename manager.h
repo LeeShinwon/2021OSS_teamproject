@@ -9,4 +9,6 @@ int selectDataNo(Product *p, int count);
 void saveData(Product *p, int count);
 int loadData(Product *p);
 
+int recommendProduct(Product *p, int count);
+
 
