@@ -1,5 +1,5 @@
 #include "product.h"
-char level_list[7][20] = {"Vegan", "Lacto", "Ovo", "Lacto Ovo", "Pollo", "Pesco", "Flexitarian"};
+char level_list[7][20] = {"Vegan", "Lacto", "Ovo", "Lacto Ovo",  "Pesco", "Pollo","Flexitarian"};
 char type_list[6][20] = {"vegetable", "milk", "egg", "fish", "chicken", "fork, beef"};
 
 int createProduct(Product *p){
