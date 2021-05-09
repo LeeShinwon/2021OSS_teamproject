@@ -109,7 +109,7 @@ int recommendProduct(Product *p, int count){
     printf("\n\n<추천 목록>\n");
 
     for(int i=0; i<count; i++){
-        if(p[i].level==cmp.level){
+        if(p[i].level>=cmp.level){
             if(p[i].type==cmp.type){
                 if(p[i].calorie<=cmp.calorie){
                     if(p[i].like>=cmp.like){
