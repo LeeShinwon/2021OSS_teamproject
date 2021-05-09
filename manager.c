@@ -70,7 +70,7 @@ int loadData(Product *p){
 }
 
 int recommendProduct(Product *p, int count){
-    char level_list[7][20] = {"Vegan", "Lacto", "Ovo", "Lacto Ovo", "Pollo", "Pesco", "Flexitarian"};
+    char level_list[7][20] = {"Vegan", "Lacto", "Ovo", "Lacto Ovo",  "Pesco", "Pollo","Flexitarian"};
     char type_list[6][20] = {"vegetable", "milk", "egg", "fish", "chicken", "fork, beef"};
 
     Product cmp;
@@ -123,3 +123,47 @@ int recommendProduct(Product *p, int count){
     return scount;
     
 }
+int searchLevel(){
+    char level_list[7][20] = {"Vegan", "Lacto", "Ovo", "Lacto Ovo", "Pesco", "Pollo","Flexitarian"};
+    char type_list[7][20] = {"vegetable", "milk", "egg", "fish", "chicken", "fork, beef", "etc"};
+
+    char name[20];
+    int type;
+
+    printf("\n");
+    printf("제품명은? ");
+    scanf("%[^\n]s",name);
+
+    printf("\n\n--------------------------------------------------------------------------\n|");
+    for(int i=0; i<7; i++){
+        printf("%d: %s", i+1, type_list[i]);
+        if(i<6){
+            printf(", ");
+        }
+    }
+    printf("|\n--------------------------------------------------------------------------\n");
+
+    printf("음식 종류는? ");
+    scanf("%d",&type);
+
+    if(type==7){
+        return -1;
+    }
+
+    printf("\n\n %s 제품은 ", name);
+
+    for(int i=type; i<7; i++){
+        if(type==1){
+            if(i==2){
+                continue;
+            }
+        }
+        printf("%s", level_list[i]);
+        if(!(i+1==7)){
+            printf(", ");
+        }
+    }
+    printf(" 까지 섭취할 수 있습니다.\n\n");
+    return 0;
+}
+
