@@ -54,7 +54,9 @@ int main(){
         else if(menu==6){//제품 분석
         }
         else if(menu==7){//제품검색
-
+            if(searchLevel()==-1){
+                printf("데이터가 없습니다!\n");
+            }
         }
         else if(menu==8){//제품추천
             if(recommendProduct(slist, curcount)==0){
