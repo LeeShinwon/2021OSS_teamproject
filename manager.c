@@ -202,11 +202,13 @@ void analysis(Product *p, int count){
     }
     calorie_avg = calorie_sum*1.0/count*1.0;
     like_avg = like_sum*1.0/count*1.0;
+    printf("--------------------------------------------------------");
     printf("\n칼로리가 가장 많은 식품은 %d 칼로리의 %s입니다.\n", calorie_max, p[calorie_max_i].name);
     printf("칼로리가 가장 적은 식품은 %d 칼로리의 %s입니다.\n", calorie_min, p[calorie_min_i].name);
     printf("식품의 평균 칼로리는 %.1f 칼로리입니다.\n", calorie_avg);
     printf("\n추천 수가 가장 많은 식품은 %d 번의 추천을 받은 %s입니다.\n", like_max, p[like_max_i].name);
     printf("추천 수가 가장 적은 식품은 %d 번의 추천을 받은 %s입니다.\n", like_min, p[like_min_i].name);
     printf("식품의 평균 추천 수는 %.1f 입니다.\n", like_avg);
+    printf("--------------------------------------------------------\n");
     printf("\n분석이 완료되었습니다.\n");
 }
