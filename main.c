@@ -15,7 +15,7 @@ int main(){
         menu = selectMenu();
         getchar();
         if(menu == 0) break;
-        if(menu == 1 || menu ==3 || menu == 4){	
+        if(menu == 1 || menu ==3 || menu == 4 || menu == 6){	
 		    if (count==0){ 
                 printf(" 데이터가 없습니다!\n");
 			    continue;
@@ -52,6 +52,7 @@ int main(){
 		    else saveData(slist,curcount);
 	    }
         else if(menu==6){//제품 분석
+            analysis(slist,curcount);
         }
         else if(menu==7){//제품검색
             if(searchLevel()==-1){

@@ -167,3 +167,46 @@ int searchLevel(){
     return 0;
 }
 
+void analysis(Product *p, int count){
+    int calorie_min, calorie_max, calorie_sum = 0;
+    int calorie_min_i = 0, calorie_max_i = 0;
+    double calorie_avg;
+    int like_min, like_max, like_sum = 0;
+    int like_min_i = 0, like_max_i = 0;
+    double like_avg;
+
+    calorie_min = p[0].calorie;
+    calorie_max = p[0].calorie;
+    like_min = p[0].like;
+    like_max = p[0].like;
+
+    for(int i = 0; i < count; i++){
+        if(p[i].calorie > calorie_max){
+            calorie_max = p[i].calorie;
+            calorie_max_i = i;
+        }
+        if(p[i].calorie < calorie_min){
+            calorie_min = p[i].calorie;
+            calorie_min_i = i;
+        }
+        if(p[i].like > like_max){
+            like_max = p[i].like;
+            like_max_i = i;
+        }
+        if(p[i].like < like_min){
+            like_min = p[i].like;
+            like_min_i = i;
+        }
+        calorie_sum += p[i].calorie;
+        like_sum += p[i].like;
+    }
+    calorie_avg = calorie_sum*1.0/count*1.0;
+    like_avg = like_sum*1.0/count*1.0;
+    printf("\n칼로리가 가장 많은 식품은 %d 칼로리의 %s입니다.\n", calorie_max, p[calorie_max_i].name);
+    printf("칼로리가 가장 적은 식품은 %d 칼로리의 %s입니다.\n", calorie_min, p[calorie_min_i].name);
+    printf("식품의 평균 칼로리는 %.1f 칼로리입니다.\n", calorie_avg);
+    printf("\n추천 수가 가장 많은 식품은 %d 번의 추천을 받은 %s입니다.\n", like_max, p[like_max_i].name);
+    printf("추천 수가 가장 적은 식품은 %d 번의 추천을 받은 %s입니다.\n", like_min, p[like_min_i].name);
+    printf("식품의 평균 추천 수는 %.1f 입니다.\n", like_avg);
+    printf("\n분석이 완료되었습니다.\n");
+}
