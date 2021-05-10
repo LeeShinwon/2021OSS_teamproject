@@ -20,8 +20,8 @@ int selectMenu(){
 
 void listProduct(Product *p,int count){
 
-    printf("\nNo. Name           level  type  calorie  like\n");
-    printf("===================================================\n");
+    printf("\nNo. Name           level  type       calorie  like\n");
+    printf("========================================================\n");
     for(int i=0; i<count; i++){
         if( p[i].type == -1 || p[i].level == -1 ) continue;
         printf("%2d. ", i+1);
